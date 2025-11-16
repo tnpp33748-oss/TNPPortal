@@ -97,6 +97,27 @@
           </div>
         </div>
       </div>
+
+      <!-- Sector Distribution Chart -->
+      <div class="doughnut-section">
+        <app-doughnut-chart
+          [title]="'Sector Distribution'"
+          [labels]="sectorDistributionLabels"
+          [data]="sectorDistributionData"
+          [colors]="sectorDistributionColors">
+        </app-doughnut-chart>
+      </div>
+    </div>
+
+    <!-- Sector Overview Chart -->
+    <div class="sector-overview-section">
+      <h2 class="section-heading">All Sectors Overview</h2>
+      <app-doughnut-chart
+        [title]="'Sector Distribution'"
+        [labels]="sectorChartLabels"
+        [data]="sectorChartData"
+        [colors]="sectorChartColors">
+      </app-doughnut-chart>
     </div>
   </div>
 </section>

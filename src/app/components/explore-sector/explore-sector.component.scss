@@ -126,7 +126,7 @@
 /* Main Content Wrapper */
 .content-wrapper {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 40px;
   align-items: start;
 
@@ -348,5 +348,42 @@
 
   .donut-chart {
     max-width: 300px;
+  }
+}
+
+/* Doughnut Chart Section */
+.doughnut-section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Sector Overview Section */
+.sector-overview-section {
+  margin-top: 60px;
+  padding-top: 60px;
+  border-top: 2px solid #e0e0e0;
+}
+
+.section-heading {
+  font-size: 28px;
+  font-weight: 800;
+  color: #001d3d;
+  margin: 0 0 40px 0;
+  text-align: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+@media (max-width: 768px) {
+  .sector-overview-section {
+    margin-top: 40px;
+    padding-top: 40px;
+  }
+
+  .section-heading {
+    font-size: 22px;
+    margin-bottom: 30px;
   }
 }

@@ -1,0 +1,49 @@
+<div class="doughnut-chart-wrapper">
+  <h3 class="chart-title">{{ title }}</h3>
+  <div class="chart-container">
+    <!-- Custom SVG Doughnut Chart -->
+    <svg [attr.viewBox]="'0 0 200 200'" class="doughnut-svg">
+      <circle 
+        cx="100" 
+        cy="100" 
+        [attr.r]="radius"
+        fill="none"
+        [attr.stroke]="getSegmentColor(i)"
+        [attr.stroke-width]="strokeWidth"
+        [attr.stroke-dasharray]="getStrokeDasharray(i)"
+        [attr.stroke-dashoffset]="getStrokeDashoffset(i)"
+        [attr.transform]="'rotate(-90 100 100)'"
+        class="doughnut-segment"
+        [attr.data-label]="labels[i]"
+        [attr.data-value]="data[i]"
+        *ngFor="let item of data; let i = index">
+      </circle>
+      <!-- Sector name labels on segments -->
+      <text 
+        *ngFor="let item of data; let i = index"
+        [attr.x]="getLabelX(i)"
+        [attr.y]="getLabelY(i)"
+        text-anchor="middle"
+        dominant-baseline="middle"
+        class="segment-label">
+        {{ labels[i] }}
+      </text>
+      <!-- Center text -->
+      <text x="100" y="100" text-anchor="middle" dominant-baseline="middle" class="center-text">
+        {{ selectedLabel }}
+      </text>
+    </svg>
+    
+    <!-- Legend -->
+    <!-- <div class="legend">
+      <div class="legend-item" 
+        *ngFor="let label of labels; let i = index"
+        (click)="selectSegment(i)"
+        [class.active]="selectedIndex === i">
+        <div class="legend-color" [style.backgroundColor]="getSegmentColor(i)"></div>
+        <span class="legend-label">{{ label }}</span>
+        <span class="legend-value">{{ data[i] }}</span>
+      </div>
+    </div> -->
+  </div>
+</div>

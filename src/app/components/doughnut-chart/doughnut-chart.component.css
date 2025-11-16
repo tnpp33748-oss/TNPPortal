@@ -1,0 +1,107 @@
+.doughnut-chart-wrapper {
+  width: 100%;
+  padding: 32px 24px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.chart-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #001d3d;
+  margin: 0;
+  text-align: center;
+}
+
+.chart-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.doughnut-svg {
+  width: 500px;
+  height: 500px;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.1));
+}
+
+.doughnut-segment {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.center-text {
+  font-size: 28px;
+  font-weight: bold;
+  color: #001d3d;
+  transition: all 0.3s ease;
+}
+
+.legend {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  width: 100%;
+  max-width: 400px;
+  padding: 16px;
+  background: #f9f9f9;
+  border-radius: 8px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 12px;
+}
+
+.legend-item:hover {
+  background: #efefef;
+  transform: translateX(4px);
+}
+
+.legend-item.active {
+  background: #e8f1ff;
+  font-weight: 600;
+}
+
+.legend-color {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.legend-label {
+  flex: 1;
+  font-weight: 500;
+  color: #333;
+}
+
+.legend-value {
+  font-weight: 700;
+  color: #001d3d;
+  min-width: 30px;
+  text-align: right;
+}
+
+.segment-label {
+  font-size: 8px;
+  font-weight: 700;
+  color: white;
+  pointer-events: none;
+  fill: white;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  letter-spacing: 0.3px;
+}
