@@ -1,0 +1,102 @@
+<section class="explore-sector-section">
+  <div class="explore-container">
+    <!-- Header -->
+    <div class="header">
+      <h2 class="title">Explore by Sectors</h2>
+      <p class="subtitle">Select a sector to view its knowledge resources</p>
+    </div>
+
+    <!-- Dropdowns -->
+    <div class="dropdowns-container">
+      <div class="dropdown-wrapper">
+        <label for="sector-select" class="dropdown-label">Sector</label>
+        <select 
+          id="sector-select" 
+          class="dropdown" 
+          [(ngModel)]="selectedSector"
+          (change)="onSectorChange()">
+          <option value="" disabled selected hidden>Select a sector</option>
+          <option *ngFor="let sector of sectors; trackBy: trackBySectorName" [value]="sector.name">
+            {{ sector.name }}
+          </option>
+        </select>
+      </div>
+
+      <div class="dropdown-wrapper">
+        <label for="district-select" class="dropdown-label">Districts</label>
+        <select 
+          id="district-select" 
+          class="dropdown"
+          [(ngModel)]="selectedDistrict"
+          (change)="onDistrictChange()">
+          <option value="" disabled selected hidden>Select a district</option>
+          <option *ngFor="let district of districts; trackBy: trackByDistrictName" [value]="district.name">
+            {{ district.name }}
+          </option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content-wrapper">
+      <!-- Cards Section -->
+      <div class="cards-section">
+        <!-- Card 1: Best Practices -->
+        <div class="info-card discover-card">
+          <div class="card-header">
+            <span class="card-label">DISCOVER</span>
+          </div>
+          <div class="card-content">
+            <div class="card-number">{{ currentSectorData.bestPractices }}</div>
+            <div class="card-title">Best Practices</div>
+            <button class="card-button">
+              <span>→</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 2: Datasets -->
+        <div class="info-card browse-card">
+          <div class="card-header">
+            <span class="card-label">BROWSE</span>
+          </div>
+          <div class="card-content">
+            <div class="card-number">{{ currentSectorData.datasets }}</div>
+            <div class="card-title">Datasets</div>
+            <button class="card-button">
+              <span>→</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 3: Policies -->
+        <div class="info-card explore-card">
+          <div class="card-header">
+            <span class="card-label">EXPLORE</span>
+          </div>
+          <div class="card-content">
+            <div class="card-number">{{ currentSectorData.policies }}</div>
+            <div class="card-title">Policies</div>
+            <button class="card-button">
+              <span>→</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Card 4: Starter Kits -->
+        <div class="info-card find-card">
+          <div class="card-header">
+            <span class="card-label">FIND</span>
+          </div>
+          <div class="card-content">
+            <div class="card-number">{{ currentSectorData.starterKits }}</div>
+            <div class="card-title">Starter Kits</div>
+            <button class="card-button">
+              <span>→</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
