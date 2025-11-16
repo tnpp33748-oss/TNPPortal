@@ -1,0 +1,49 @@
+<section class="hero-section">
+  <div class="animated-bg"></div>
+  <div class="hero-container">
+    <!-- Left Content -->
+    <div class="hero-left">
+      <div class="hero-badge">🌟 Transforming Tamil Nadu</div>
+      <h1 class="hero-title">
+        <span class="title-word">Tamil</span>
+        <span class="title-word">Nadu</span>
+        <span class="title-word highlight">Policy Portal</span>
+      </h1>
+      <p class="hero-subtitle">Empowering progressive development through integrated policy framework, best practices in governance, and collaborative action across districts</p>
+      <p class="hero-description">Access comprehensive state policies, district-level insights, and real-time development data to drive sustainable growth across Tamil Nadu</p>
+      <div class="hero-cta">
+        <button class="btn-primary">Explore Platform</button>
+        <button class="btn-secondary">Learn More</button>
+      </div>
+    </div>
+
+    <!-- Right Visual -->
+    <div class="hero-right">
+      <div class="hero-visual">
+        <div class="visual-card card-1">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop&q=80" alt="Policy Framework">
+          <div class="card-label">Policy Excellence</div>
+        </div>
+        <div class="visual-card card-2">
+          <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=600&h=400&fit=crop&q=80" alt="Regional Development">
+          <div class="card-label">District Growth</div>
+        </div>
+        <div class="emblem">
+          <span class="emblem-text">★</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Statistics Section -->
+  <div class="stats-section">
+    <div class="stat-card" *ngFor="let stat of stats; let i = index" [style.animation-delay]="i * 0.1 + 's'">
+      <div class="stat-icon">📊</div>
+      <div class="stat-number">{{ stat.number }}</div>
+      <div class="stat-label">
+        <span>{{ stat.label }}</span>
+        <span class="arrow">✓</span>
+      </div>
+    </div>
+  </div>
+</section>

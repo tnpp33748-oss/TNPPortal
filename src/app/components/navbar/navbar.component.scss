@@ -1,6 +1,6 @@
 .navbar {
   width: 100%;
-  background: linear-gradient(135deg, #001d3d 0%, #003d7a 50%, #004aad 100%);
+  background: linear-gradient(90deg, #1a7b7e 0%, #1a8b8f 100%);
   color: white;
   display: flex;
   justify-content: space-between;
@@ -32,12 +32,35 @@
   transform: scale(1.05);
 }
 
+.navbar-title-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex-shrink: 0;
+}
+
+.govt-title {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: white;
+  line-height: 1.2;
+}
+
+.portal-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffa500;
+  letter-spacing: 0.3px;
+  line-height: 1.2;
+}
+
 .site-title {
   font-size: 20px;
   font-weight: 700;
   letter-spacing: 0.5px;
   text-transform: uppercase;
-  background: linear-gradient(135deg, #ffffff 0%, #e0e8ff 100%);
+  background: linear-gradient(135deg, #ffa500 0%, #ffffff 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -97,7 +120,7 @@
     left: 50%;
     width: 0;
     height: 3px;
-    background: linear-gradient(90deg, #00d4ff, #0099ff);
+    background: linear-gradient(90deg, #ffa500, #ffb700);
     border-radius: 2px 2px 0 0;
     transition: all 0.3s ease;
     transform: translateX(-50%);
@@ -178,7 +201,7 @@
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.15));
   border-color: rgba(255, 255, 255, 0.6);
   transform: translateY(-2px);
-  box-shadow: 0 8px 16px rgba(0, 212, 255, 0.2);
+  box-shadow: 0 8px 16px rgba(255, 165, 0, 0.2);
 }
 
 /* --------------------- */
@@ -201,7 +224,7 @@
   width: auto;
   max-width: 90vw;
   min-width: 1150px;
-  box-shadow: 0 10px 40px rgba(0, 29, 61, 0.2), 0 0 0 1px rgba(0, 212, 255, 0.1);
+  box-shadow: 0 10px 40px rgba(26, 123, 126, 0.2), 0 0 0 1px rgba(255, 165, 0, 0.1);
   display: block;
   z-index: 1000;
   backdrop-filter: blur(20px);
@@ -244,8 +267,8 @@
   padding: 15px;
   height: 180px;
   position: relative;
-  border: 1.5px solid rgba(251, 191, 36, 0.1);
-  box-shadow: 0 4px 15px rgba(6, 78, 59, 0.08);
+  border: 1.5px solid rgba(255, 165, 0, 0.1);
+  box-shadow: 0 4px 15px rgba(26, 123, 126, 0.08);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
   display: flex;
@@ -283,8 +306,8 @@
 
 .panel-card:hover {
   transform: translateY(-8px);
-  border-color: rgba(0, 212, 255, 0.3);
-  box-shadow: 0 12px 30px rgba(0, 212, 255, 0.15);
+  border-color: rgba(255, 165, 0, 0.3);
+  box-shadow: 0 12px 30px rgba(255, 165, 0, 0.15);
 }
 
 .card-content {
@@ -308,7 +331,7 @@
   margin: 0;
   font-size: 16px;
   font-weight: 700;
-  color: #001d3d;
+  color: #1a7b7e;
   letter-spacing: 0.3px;
   line-height: 1.4;
   min-height: 3.2em;
@@ -320,13 +343,13 @@
 
 .arrow-right {
   font-size: 18px;
-  color: #0099ff;
+  color: #ffa500;
   transition: all 0.3s ease;
   flex-shrink: 0;
 }
 
 .panel-card:hover .arrow-right {
-  color: #00d4ff;
+  color: #ffb700;
   transform: translateX(4px);
 }
 
