@@ -1,0 +1,52 @@
+<nav class="navbar">
+  <div class="navbar-left">
+    <img src="/assets/TamilNadu_Logo.png" class="logo" />
+
+    <ul class="menu">
+      <li 
+        *ngFor="let item of navItems" 
+        (click)="toggleDropdown(item.label, $event)"
+      >
+        {{ item.label }}
+        <span *ngIf="item.hasDropdown" class="arrow">▼</span>
+
+        <!-- CARD PANEL -->
+        <div
+          class="dropdown-panel"
+          *ngIf="hoveredDropdown === item.label && isCardPanel(item.panelItems)"
+          (click)="$event.stopPropagation()"
+        >
+          <div class="panel-grid">
+            <div class="panel-card" *ngFor="let p of item.panelItems">
+              <div class="card-content">
+                <div class="card-header">
+                  <h3>{{ p.title }}</h3>
+                  <span class="arrow-right">➜</span>
+                </div>
+                <p>{{ p.desc }}</p>
+              </div>
+              <img class="card-icon" [src]="p.icon" />
+            </div>
+          </div>
+        </div>
+
+        <!-- LIST PANEL -->
+        <div
+          class="states-panel"
+          *ngIf="hoveredDropdown === item.label && isListPanel(item.panelItems)"
+          (click)="$event.stopPropagation()"
+        >
+          <h3 class="panel-title">Explore {{ item.label }}</h3>
+
+          <div class="states-grid">
+            <div class="state-item" *ngFor="let s of item.panelItems">
+              {{ s }}
+              <span class="right-arrow">➜</span>
+            </div>
+          </div>
+        </div>
+
+      </li>
+    </ul>
+  </div>
+</nav>
