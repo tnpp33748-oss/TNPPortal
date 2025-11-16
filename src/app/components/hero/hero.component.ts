@@ -1,22 +1,31 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
-interface Stat {
-  number: string;
-  label: string;
-}
+import { StatsService, Stat } from '../../services/stats.service';
 
 @Component({
-  selector: 'app-hero',
+  selector: 'app-overview',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './hero.component.html',
   styleUrl: './hero.component.scss'
 })
-export class HeroComponent {
-  stats: Stat[] = [
-    { number: '38', label: 'Districts Covered' },
-    { number: '2,547', label: 'State Policies' },
-    { number: '₹8.2L Cr', label: 'GSDP' }
-  ];
+export class OverviewComponent implements OnInit {
+  stats: Stat[] = [];
+
+  constructor(private statsService: StatsService) {}
+
+  ngOnInit(): void {
+    this.loadStats();
+  }
+
+  loadStats(): void {
+    this.statsService.getStats().subscribe({
+      next: (data: Stat[]) => {
+        this.stats = data;
+      },
+      error: (error) => {
+        console.error('Error loading stats:', error);
+      }
+    });
+  }
 }
