@@ -1,23 +1,27 @@
 <nav class="navbar">
   <div class="navbar-left">
-    <img src="/assets/TamilNadu_Logo.png" class="logo" />
+    <img src="assets/TamilNadu_Logo.png" alt="Tamil Nadu Logo" class="logo" />
 
     <ul class="menu">
       <li 
         *ngFor="let item of navItems" 
         (click)="toggleDropdown(item.label, $event)"
+        [class.active]="hoveredDropdown === item.label"
       >
         {{ item.label }}
         <span *ngIf="item.hasDropdown" class="arrow">▼</span>
 
         <!-- CARD PANEL -->
         <div
-          class="dropdown-panel"
+          class="dropdown-panel dropdown-content"
           *ngIf="hoveredDropdown === item.label && isCardPanel(item.panelItems)"
-          (click)="$event.stopPropagation()"
         >
           <div class="panel-grid">
-            <div class="panel-card" *ngFor="let p of item.panelItems">
+            <div 
+              class="panel-card" 
+              *ngFor="let p of item.panelItems"
+              [style.backgroundImage]="'url(' + p.icon + ')'"
+            >
               <div class="card-content">
                 <div class="card-header">
                   <h3>{{ p.title }}</h3>
@@ -25,20 +29,18 @@
                 </div>
                 <p>{{ p.desc }}</p>
               </div>
-              <img class="card-icon" [src]="p.icon" />
             </div>
           </div>
         </div>
 
         <!-- LIST PANEL -->
         <div
-          class="states-panel"
+          class="states-panel dropdown-content"
           *ngIf="hoveredDropdown === item.label && isListPanel(item.panelItems)"
-          (click)="$event.stopPropagation()"
         >
           <h3 class="panel-title">Explore {{ item.label }}</h3>
 
-          <div class="states-grid">
+          <div class="states-grid-4rows">
             <div class="state-item" *ngFor="let s of item.panelItems">
               {{ s }}
               <span class="right-arrow">➜</span>

@@ -38,12 +38,19 @@ export class NavbarComponent {
            typeof items[0] === 'string';
   }
 
-  // 🔥 Close dropdown when user clicks outside the navbar
+  // 🔥 Close dropdown when user clicks outside BOTH navbar & dropdown
   @HostListener('document:click', ['$event'])
   closeOnOutsideClick(event: MouseEvent) {
     const target = event.target as HTMLElement;
-    if (!target.closest('.navbar')) {
+
+    const clickedInsideNavbar = target.closest('.navbar');
+    const clickedInsideDropdown = target.closest('.dropdown-content');
+
+    if (!clickedInsideNavbar && !clickedInsideDropdown) {
       this.hoveredDropdown = null;
     }
   }
 }
+
+
+
